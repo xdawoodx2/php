@@ -1,8 +1,8 @@
 <?php
 $servername = "test-srvr01.database.windows.net";
-$username   = "root";
-$password   = "your_password";
-$dbname     = "your_database";
+$username   = "Dawood";
+$password   = "Daud@2664254";
+$dbname     = "db01";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
