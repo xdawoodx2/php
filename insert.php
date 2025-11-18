@@ -1,7 +1,7 @@
 <?php
 $servername = "test-srvr01.database.windows.net";
 $username   = "Dawood";
-$password   = "Daud@2664254";
+$password   = "123@Itcs";
 $dbname     = "db01";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
