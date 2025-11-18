@@ -6,6 +6,7 @@ $connectionOptions = array(
     "Uid" => "Dawood",
     "PWD" => "123456",
     "Encrypt" => true
+
 );
 
 $conn = sqlsrv_connect($serverName, $connectionOptions);
