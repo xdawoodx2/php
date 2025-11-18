@@ -16,3 +16,8 @@
     // Close connection
     $conn->close();
     ?>
+<?php
+
+echo "Hello World";
+
+?>
