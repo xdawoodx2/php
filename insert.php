@@ -1,26 +1,33 @@
 <?php
-$servername = "test-srvr01.database.windows.net";
-$username   = "Dawood";
-$password   = "123@Itcs";
-$dbname     = "db01";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$serverName = "test-srvr01.database.windows.net";
+$connectionOptions = array(
+    "Database" => "db01",
+    "Uid" => "Dawood",
+    "PWD" => "123456",
+    "Encrypt" => true
+);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$conn = sqlsrv_connect($serverName, $connectionOptions);
+
+if ($conn === false) {
+    die(print_r(sqlsrv_errors(), true));
 }
 
 $name  = $_POST['name'];
 $email = $_POST['email'];
 
-$sql = "INSERT INTO test_table (name, email) VALUES ('$name', '$email')";
+$sql = "INSERT INTO test_table (name, email) VALUES (?, ?)";
+$params = array($name, $email);
 
-if ($conn->query($sql) === TRUE) {
+$stmt = sqlsrv_query($conn, $sql, $params);
+
+if ($stmt) {
     echo "Record inserted successfully!<br>";
     echo "<a href='form.html'>Back to form</a>";
 } else {
-    echo "Error: " . $conn->error;
+    die(print_r(sqlsrv_errors(), true));
 }
 
-$conn->close();
+sqlsrv_close($conn);
 ?>
