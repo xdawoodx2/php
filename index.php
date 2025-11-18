@@ -1,9 +1,4 @@
 <?php
-
-echo "Hello World";
-?>
-
-<?php
 // PHP Data Objects(PDO) Sample Code:
 try {
     $conn = new PDO("sqlsrv:server = tcp:test-srvr01.database.windows.net,1433; Database = db01", "dawood", "123@Itcs");
@@ -19,7 +14,7 @@ $connectionInfo = array("UID" => "dawood", "pwd" => "123@Itcs", "Database" => "d
 $serverName = "tcp:test-srvr01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-echo "Success"
+echo "Successfully Connected."
 ?>
 
 
