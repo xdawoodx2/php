@@ -18,7 +18,7 @@ if ($conn === false) {
 $name  = $_POST['name'];
 $email = $_POST['email'];
 
-$sql = "INSERT INTO test_table (name, email) VALUES (?, ?)";
+$sql = "INSERT INTO test_table2 (name, email) VALUES (?, ?)";
 $params = array($name, $email);
 
 $stmt = sqlsrv_query($conn, $sql, $params);
