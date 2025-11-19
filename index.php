@@ -15,6 +15,15 @@ $serverName = "tcp:test-srvr01.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 echo "Successfully Connected."
+
+$sql = "SELECT id, name, email FROM test_table2";
+$stmt = $conn->query($sql);
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    echo "Name: " . $row['name'] . "<br>";
+    echo "Email: " . $row['email'] . "<br><hr>";
+}
+
 ?>
 
 
