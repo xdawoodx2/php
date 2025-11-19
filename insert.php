@@ -30,5 +30,15 @@ if ($stmt) {
     die(print_r(sqlsrv_errors(), true));
 }
 
+$sql = "SELECT id, name, email FROM test_table2";
+$stmt = $conn->query($sql);
+
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    echo "ID: " . $row['id'] . "<br>";
+    echo "Name: " . $row['name'] . "<br>";
+    echo "Email: " . $row['email'] . "<br><hr>";
+}
+
+
 sqlsrv_close($conn);
 ?>
