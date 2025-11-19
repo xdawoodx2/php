@@ -4,7 +4,7 @@ $serverName = "test-srvr01.database.windows.net";
 $connectionOptions = array(
     "Database" => "db01",
     "Uid" => "Dawood",
-    "PWD" => "123456",
+    "PWD" => "123@Itcs",
     "Encrypt" => true
 
 );
